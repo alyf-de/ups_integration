@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include ups_integration *.css
+recursive-include ups_integration *.csv
+recursive-include ups_integration *.html
+recursive-include ups_integration *.ico
+recursive-include ups_integration *.js
+recursive-include ups_integration *.json
+recursive-include ups_integration *.md
+recursive-include ups_integration *.png
+recursive-include ups_integration *.py
+recursive-include ups_integration *.svg
+recursive-include ups_integration *.txt
+recursive-exclude ups_integration *.pyc
