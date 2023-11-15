@@ -8,13 +8,12 @@
  "engine": "InnoDB",
  "field_order": [
   "target_server",
-  "column_break_cb4ea",
   "client_id",
   "client_secret",
   "access_token_section",
   "access_token",
   "column_break_dsopc",
-  "expires_at"
+  "expires"
  ],
  "fields": [
   {
@@ -38,31 +37,28 @@
   {
    "fieldname": "access_token",
    "fieldtype": "Password",
-   "label": "Access Token"
-  },
-  {
-   "fieldname": "expires_at",
-   "fieldtype": "Datetime",
-   "label": "Expires At"
+   "label": "Access Token",
+   "read_only": 1
   },
   {
    "fieldname": "access_token_section",
-   "fieldtype": "Section Break",
-   "label": "Access Token"
-  },
-  {
-   "fieldname": "column_break_cb4ea",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_dsopc",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expires",
+   "fieldtype": "Datetime",
+   "label": "Expires",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-11-15 12:53:11.050464",
+ "modified": "2023-11-15 15:02:13.953763",
  "modified_by": "Administrator",
  "module": "UPS Integration",
  "name": "UPS Settings",
