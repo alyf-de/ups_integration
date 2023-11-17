@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "target_server",
+  "api_version",
+  "column_break_opkhb",
   "client_id",
   "client_secret",
   "access_token_section",
@@ -53,12 +55,24 @@
    "fieldtype": "Datetime",
    "label": "Expires",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_opkhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2205",
+   "description": "Format: YYMM (year and month of the release)",
+   "fieldname": "api_version",
+   "fieldtype": "Select",
+   "label": "API Version",
+   "options": "2205\n2108\n1807\n1801\n1707\n1701\n1607\n1601\n1"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-11-15 15:02:13.953763",
+ "modified": "2023-11-17 15:15:26.526342",
  "modified_by": "Administrator",
  "module": "UPS Integration",
  "name": "UPS Settings",

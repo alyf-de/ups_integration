@@ -10,6 +10,7 @@ from requests.exceptions import ConnectionError, HTTPError, RequestException, Ti
 class UPSClient:
 	def __init__(self):
 		self.api_base_url = self.get_api_base_url()
+		self.api_version = self.get_api_version()
 		self.session = None
 
 	def __enter__(self):
@@ -71,6 +72,9 @@ class UPSClient:
 
 	def get_api_base_url(self):
 		return frappe.get_single("UPS Settings").get_api_base_url()
+
+	def get_api_version(self):
+		return frappe.db.get_single_value("UPS Settings", "api_version")
 
 	def request(self, method, url, **kwargs):
 		try:
