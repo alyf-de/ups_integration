@@ -7,6 +7,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "account_number",
+  "section_break_jgeen",
   "target_server",
   "api_version",
   "column_break_opkhb",
@@ -67,12 +69,21 @@
    "fieldtype": "Select",
    "label": "API Version",
    "options": "2205\n2108\n1807\n1801\n1707\n1701\n1607\n1601\n1"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "section_break_jgeen",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-11-17 15:15:26.526342",
+ "modified": "2023-11-17 21:08:00.133456",
  "modified_by": "Administrator",
  "module": "UPS Integration",
  "name": "UPS Settings",

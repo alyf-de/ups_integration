@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-17 20:09:01.521870",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "charge_type",
+  "bill"
+ ],
+ "fields": [
+  {
+   "default": "Transportation",
+   "fieldname": "charge_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Charge Type",
+   "options": "Transportation\nDuties and Taxes\nBroker of Choice"
+  },
+  {
+   "default": "Shipper",
+   "fieldname": "bill",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Bill",
+   "options": "Shipper"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-11-17 20:55:40.645652",
+ "modified_by": "Administrator",
+ "module": "UPS Integration",
+ "name": "UPS Shipment Charge",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

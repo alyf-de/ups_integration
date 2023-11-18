@@ -80,10 +80,8 @@ class UPSClient:
 		try:
 			response = self.session.request(method, url, **kwargs)
 			response.raise_for_status()
-
-			return response
 		except HTTPError as e:
-			frappe.log_error("UPS API Request HTTP Error", e)
+			frappe.log_error("UPS API Request HTTP Error", f"{e}\n\n{e.response.json()}")
 		except ConnectionError as e:
 			frappe.log_error("UPS API Request Connection Error", e)
 		except Timeout as e:
@@ -93,4 +91,19 @@ class UPSClient:
 		except Exception as e:
 			frappe.log_error("UPS API Request Unexpected Error", e)
 
-		return None
+		return response
+
+	def ship(self, shipment_request, ups_shipment_id):
+		url = f"{self.api_base_url}/api/shipments/v{self.api_version}/ship"
+
+		payload = shipment_request
+		headers = {
+			"Content-Type": "application/json",
+			"transId": ups_shipment_id,
+			"transactionSrc": "erpnext-h38dj3",
+		}
+
+		shipment_response = self.request("POST", url, json=payload, headers=headers)
+
+		if shipment_response != None:
+			return shipment_response.json()

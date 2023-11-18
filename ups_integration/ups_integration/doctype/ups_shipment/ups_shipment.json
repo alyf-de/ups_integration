@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2023-11-17 15:31:15.090878",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ssmeu",
+  "service",
+  "description",
+  "address_validation",
+  "section_break_3qa9v",
+  "shipper",
+  "shipper_address",
+  "column_break_ti3qv",
+  "ship_to",
+  "ship_to_address",
+  "section_break_9z9jn",
+  "packages",
+  "section_break_bg622",
+  "charges",
+  "amended_from",
+  "response_tab",
+  "response"
+ ],
+ "fields": [
+  {
+   "default": "Postal Code, State Province Code, City",
+   "fieldname": "address_validation",
+   "fieldtype": "Select",
+   "label": "Address Validation",
+   "options": "Postal Code, State Province Code, City\nPostal Code, State Province Code"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "UPS Shipment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Link",
+   "label": "Shipper",
+   "options": "Company"
+  },
+  {
+   "fieldname": "shipper_address",
+   "fieldtype": "Link",
+   "label": "Shipper Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "ship_to",
+   "fieldtype": "Link",
+   "label": "Ship To",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "ship_to_address",
+   "fieldtype": "Link",
+   "label": "Ship To Address",
+   "options": "Address"
+  },
+  {
+   "default": "UPS Standard",
+   "fieldname": "service",
+   "fieldtype": "Select",
+   "label": "Service",
+   "options": "Next Day Air\n2nd Day Air\nGround\nExpress\nExpedited\nUPS Standard\n3 Day Select\nNext Day Air Saver\nUPS Next Day Air Early\nUPS Worldwide Economy DDU\nExpress Plus\n2nd Day Air A.M.\nUPS Saver\nFirst Class Mail\nPriority Mail\nExpedited Mail Innovations\nPriority Mail Innovations\nEconomy Mail Innovations\nMail Innovations (MI) Returns\nUPS Access Point Economy\nUPS Worldwide Express Freight Midday\nUPS Worldwide Economy DDP\nUPS Express 12:00\nUPS Heavy Goods\nUPS Today Standard\nUPS Today Dedicated Courier\nUPS Today Intercity\nUPS Today Express\nUPS Today Express Saver\nUPS Worldwide Express Freight"
+  },
+  {
+   "fieldname": "packages",
+   "fieldtype": "Table",
+   "label": "Packages",
+   "options": "UPS Shipment Package"
+  },
+  {
+   "fieldname": "charges",
+   "fieldtype": "Table",
+   "label": "Charges",
+   "options": "UPS Shipment Charge"
+  },
+  {
+   "fieldname": "section_break_ssmeu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_3qa9v",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ti3qv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9z9jn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_bg622",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "response_tab",
+   "fieldtype": "Tab Break",
+   "label": "Response"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "JSON",
+   "label": "Response"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-11-18 22:10:40.262039",
+ "modified_by": "Administrator",
+ "module": "UPS Integration",
+ "name": "UPS Shipment",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

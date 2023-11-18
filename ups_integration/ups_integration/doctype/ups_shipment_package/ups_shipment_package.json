@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-17 19:46:07.128339",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "package_type",
+  "weight_uom",
+  "weight"
+ ],
+ "fields": [
+  {
+   "default": "Customer Supplied Package",
+   "fieldname": "package_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Package Type",
+   "options": "UPS Letter\nCustomer Supplied Package\nTube\nPAK\nUPS Express Box\nUPS 25KG Box\nUPS 10KG Box\nPallet\nSmall Express Box\nMedium Express Box\nLarge Express Box\nFlats\nParcels\nBPM\nFirst Class\nPriority\nMachineables\nIrregulars\nParcel Post\nBPM Parcel\nMedia Mail\nBPM Flat\nStandard Flat"
+  },
+  {
+   "default": "Kilograms",
+   "fieldname": "weight_uom",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Weight UOM",
+   "options": "Pounds\nKilograms\nOunces"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-11-17 20:56:41.855617",
+ "modified_by": "Administrator",
+ "module": "UPS Integration",
+ "name": "UPS Shipment Package",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
