@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "request_tab",
   "section_break_ssmeu",
   "service",
   "description",
@@ -24,7 +25,9 @@
   "charges",
   "amended_from",
   "response_tab",
-  "response"
+  "developer_tab",
+  "response",
+  "test_image"
  ],
  "fields": [
   {
@@ -120,12 +123,27 @@
    "fieldname": "response",
    "fieldtype": "JSON",
    "label": "Response"
+  },
+  {
+   "fieldname": "test_image",
+   "fieldtype": "Attach Image",
+   "label": "test image"
+  },
+  {
+   "fieldname": "request_tab",
+   "fieldtype": "Tab Break",
+   "label": "Request"
+  },
+  {
+   "fieldname": "developer_tab",
+   "fieldtype": "Tab Break",
+   "label": "Developer"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-18 22:10:40.262039",
+ "modified": "2023-11-18 23:22:42.455378",
  "modified_by": "Administrator",
  "module": "UPS Integration",
  "name": "UPS Shipment",

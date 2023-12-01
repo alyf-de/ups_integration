@@ -1,6 +1,9 @@
 # Copyright (c) 2023, ALYF GmbH and contributors
 # For license information, please see license.txt
 
+import base64
+import io
+
 import frappe
 from frappe.model.document import Document
 
@@ -88,6 +91,28 @@ class UPSShipment(Document):
 		# FIXME: Change to on_submit
 		with UPSClient() as client:
 			self.response = client.ship(self.get_shipment_request(), self.name)
+
+			for package in (
+				self.response.get("ShipmentResponse", {}).get("ShipmentResults", {}).get("PackageResults", [])
+			):
+				graphic_image_base64 = package.get("ShippingLabel", {}).get("GraphicImage", None)
+				tacking_number = package.get("TrackingNumber", None)
+				image_data = base64.b64decode(graphic_image_base64)
+				image_buffer = io.BytesIO(image_data)
+				docname = self.name
+				filename = f"{tacking_number}.gif"
+
+				_file = frappe.get_doc(
+					{
+						"doctype": "File",
+						"file_name": filename,
+						"is_private": 1,
+						"content": image_buffer.getvalue(),
+						"attached_to_doctype": "UPS Shipment",
+						"attached_to_name": docname,
+					}
+				)
+				_file.save()
 
 	def get_shipment_request(self):
 		shipment_request = {
